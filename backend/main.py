@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import List, Dict
 import networkx as nx
 
-app = FastAPI()
+app = FastAPI()   //rechecked
 
 # Add the CORS middleware configuration
 app.add_middleware(
@@ -39,6 +39,7 @@ async def parse_pipeline(pipeline: Pipeline):
     # Create a directed graph using networkx
     G = nx.DiGraph()
 
+    
     # Add nodes to the graph
     for node in pipeline.nodes:
         G.add_node(node.id)
